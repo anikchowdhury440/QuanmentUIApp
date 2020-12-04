@@ -1,35 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
+  View
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import Heading from './src/components/Heading';
+import Input from './src/components/Input';
+import TopHeader from './src/components/TopHeader';
 
-const App: () => React$Node = () => {
-  return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
-  );
+class App extends Component {
+  render() {
+    return (
+      <View>
+        <TopHeader/>
+        <Heading/>
+        <Input/>
+      </View>
+    );
+  };
 };
 
 const styles = StyleSheet.create({
