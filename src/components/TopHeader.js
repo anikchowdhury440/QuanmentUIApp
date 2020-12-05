@@ -5,7 +5,7 @@ import TopHeaderStyles from '../styles/TopHeader.styles'
 const TopHeader = () => {
     return (
         <View style = {TopHeaderStyles.container}>
-            <Text style = {TopHeaderStyles.appName}>
+            <Text style = {TopHeaderStyles.app_name}>
                 Quanment
             </Text>
             <Text style = {TopHeaderStyles.history}>

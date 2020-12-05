@@ -12,7 +12,7 @@ const TopHeaderStyles = StyleSheet.create({
         justifyContent : "space-between"
     },
 
-    appName : {
+    app_name : {
         fontSize : 20,
         fontWeight : 'bold',
     },

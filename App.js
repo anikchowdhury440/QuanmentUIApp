@@ -5,17 +5,13 @@ import {
   View
 } from 'react-native';
 
-import Heading from './src/components/Heading';
-import Input from './src/components/Input';
-import TopHeader from './src/components/TopHeader';
+import HomeScreen from './src/components/HomeScreen';
 
 class App extends Component {
   render() {
     return (
       <View>
-        <TopHeader/>
-        <Heading/>
-        <Input/>
+        <HomeScreen/>
       </View>
     );
   };
