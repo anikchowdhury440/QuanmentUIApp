@@ -5,14 +5,12 @@ import {
   View
 } from 'react-native';
 
-import HomeScreen from './src/components/HomeScreen';
+import StackScreen from './src/navigation/StackScreen';
 
 class App extends Component {
   render() {
     return (
-      <View>
-        <HomeScreen/>
-      </View>
+      <StackScreen/>
     );
   };
 };

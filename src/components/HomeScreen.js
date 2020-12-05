@@ -1,15 +1,15 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Button, View } from 'react-native'
 import Heading from './Heading'
 import Quantity from './Quantity'
 import TopHeader from './TopHeader'
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     return (
         <View>
             <TopHeader/>
             <Heading/>
-            <Quantity/>
+            <Quantity navigation = {navigation}/>
         </View>
     )
 }
