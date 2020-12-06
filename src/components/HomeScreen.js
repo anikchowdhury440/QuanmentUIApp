@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, View } from 'react-native'
+import { View } from 'react-native'
 import Heading from './Heading'
 import Quantity from './Quantity'
 import TopHeader from './TopHeader'

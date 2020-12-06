@@ -21,7 +21,7 @@ const InputConvertStyle = StyleSheet.create({
 
     unit_input_block : {
         margin : 10,
-        width : 170
+        width : '45%'
     },
 
     unit_userinput_block : {
@@ -44,7 +44,7 @@ const InputConvertStyle = StyleSheet.create({
         borderWidth: 1,
         fontSize : 20,
         fontWeight : "bold",
-        paddingLeft : 20
+        paddingLeft : 10
     },
 
     unit_user_input_picker : {

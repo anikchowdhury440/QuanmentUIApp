@@ -14,7 +14,7 @@ const QuantityStyles = StyleSheet.create({
         paddingBottom : 10
     },
 
-    button_unit : {
+    button_quantity : {
         flexDirection : 'row',
         justifyContent : 'center'
     },
