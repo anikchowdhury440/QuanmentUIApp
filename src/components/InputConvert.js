@@ -20,41 +20,36 @@ export default class InputConvert extends Component {
         }
     }
     
-    updateFromUnit = async (unit) => {
-        await this.setState({
+    updateFromUnit = unit => {
+        this.setState({
             fromUnitIndex : unit
         })
         this.convertFromUnit(this.state.fromValue);
     }
 
     updateToUnit = async (unit) => {
-        await this.setState({
+        this.setState({
             toUnitIndex : unit
         })
         this.convertFromUnit(this.state.fromValue);
     }
 
     convertFromUnit = async (value) => {
+        await this.setState({
+            fromValue : value
+        })
         if(this.state.quantityName == 'Length') {
-            await this.setState({
-                fromValue : value
-            })
             var toUnitConstant = this.state.lengthConstant[this.state.toUnitIndex];
             var fromUnitConstant = this.state.lengthConstant[this.state.fromUnitIndex];
             var resultValue = (this.state.fromValue * toUnitConstant) / fromUnitConstant;
         }
         else if (this.state.quantityName == 'Volume') {
-            await this.setState({
-                fromValue : value
-            })
             var toUnitConstant = this.state.volumeConstant[this.state.toUnitIndex];
             var fromUnitConstant = this.state.volumeConstant[this.state.fromUnitIndex];
             var resultValue = (this.state.fromValue * toUnitConstant) / fromUnitConstant;
         }
         else {
-            await this.setState({
-                fromValue : value
-            })
+        
             if(this.state.fromUnitIndex == this.state.toUnitIndex) {
                 resultValue = this.state.fromValue
             }
