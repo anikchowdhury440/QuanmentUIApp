@@ -15,8 +15,8 @@ export default class InputConvert extends Component {
             volumeConstant : [1, 0.264172, 1000],
             fromUnitIndex : 0,
             toUnitIndex : 0,
-            fromValue : '0',
-            toValue : '0',
+            fromValue : 0,
+            toValue : 0,
         }
     }
     
@@ -27,16 +27,17 @@ export default class InputConvert extends Component {
         this.convertFromUnit(this.state.fromValue);
     }
 
-    updateToUnit = async (unit) => {
+    updateToUnit = unit => {
         this.setState({
             toUnitIndex : unit
         })
         this.convertFromUnit(this.state.fromValue);
+        console.log(this.state.toUnitIndex)
     }
 
     convertFromUnit = async (value) => {
         await this.setState({
-            fromValue : value
+            fromValue : Number(value)
         })
         if(this.state.quantityName == 'Length') {
             var toUnitConstant = this.state.lengthConstant[this.state.toUnitIndex];
@@ -60,10 +61,10 @@ export default class InputConvert extends Component {
                 var resultValue = (this.state.fromValue - 32) * 5 / 9
             }
             else if(this.state.fromUnitIndex == 0 && this.state.toUnitIndex == 2) {
-                var resultValue = parseFloat(this.state.fromValue) + 273.15
+                var resultValue = this.state.fromValue + 273.15
             }
             else if(this.state.fromUnitIndex == 2 && this.state.toUnitIndex == 0) {
-                var resultValue = parseFloat(this.state.fromValue) - 273.15
+                var resultValue = this.state.fromValue - 273.15
             }
             else if(this.state.fromUnitIndex == 1 && this.state.toUnitIndex == 2) {
                 var resultValue = (this.state.fromValue - 32) * 5 / 9 + 273.15
@@ -88,7 +89,7 @@ export default class InputConvert extends Component {
                         <View style = {InputConvertStyle.unit_userinput_block}>
                             <TextInput style = {InputConvertStyle.unit_user_input_textinput}
                                 onChangeText = {this.convertFromUnit}
-                                value = {this.state.fromValue}/>
+                                value = {this.state.fromValue.toString()}/>
                             <Picker style = {InputConvertStyle.unit_user_input_picker}
                                     selectedValue = {this.state.fromUnitIndex}
                                     onValueChange = {this.updateFromUnit}
