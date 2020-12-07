@@ -1,16 +1,10 @@
-import React from 'react';
+
 import {StyleSheet} from 'react-native';
 
 const InputConvertStyle = StyleSheet.create({
     container : {
-        paddingTop : 30,
+        paddingTop : 20,
         width : '100%',
-    },
-
-    convert_heading : {
-        alignSelf : "center",
-        fontSize : 20,
-        fontWeight : 'bold'
     },
 
     unit_conversion_style : {
@@ -22,6 +16,10 @@ const InputConvertStyle = StyleSheet.create({
     unit_input_block : {
         margin : 10,
         width : '45%'
+    },
+
+    from_to_text : {
+        fontWeight : 'bold'
     },
 
     unit_userinput_block : {

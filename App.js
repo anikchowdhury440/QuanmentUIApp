@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
 import {
-  StyleSheet,
-  View
+  StyleSheet
 } from 'react-native';
 
 import StackScreen from './src/navigation/StackScreen';

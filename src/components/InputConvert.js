@@ -1,4 +1,4 @@
-import React, { Component, useLayoutEffect } from 'react';
+import React, { Component} from 'react';
 import { Text, TextInput, View } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import InputConvertStyle from '../styles/InputConvert.styles';
@@ -7,12 +7,12 @@ export default class InputConvert extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            quantityName : this.props.route.params.quantity,
+            quantityName : this.props.quantity,
             lengthUnit : ["Kilometre", "Meter", "Centimeter", "Milimetre", "Micrometre", "Mile", "Foot", "Inch", "Yard"],
             temperatureUnit : ["Celcius", "FarenHeit", "Kelvin"],
             volumeUnit : ["Litre", "Gallon", "Mililitre"],
-            lengthConstant : [1, 1000, 100000, 1e+6, 1e+9, 0.621371, 3281, 39370, 1094],
-            volumeConstant : [1, 0.264172, 1000],
+            lengthConstant : [1, 1000, 100000, 1e+6, 1e+9, 0.6214, 3282, 39384, 1094],
+            volumeConstant : [1, 0.2642, 1000],
             fromUnitIndex : 0,
             toUnitIndex : 0,
             fromValue : 0,
@@ -32,7 +32,6 @@ export default class InputConvert extends Component {
             toUnitIndex : unit
         })
         this.convertFromUnit(this.state.fromValue);
-        console.log(this.state.toUnitIndex)
     }
 
     convertFromUnit = async (value) => {
@@ -82,10 +81,9 @@ export default class InputConvert extends Component {
     render() {
         return (
             <View style = {InputConvertStyle.container}>
-                <Text style = {InputConvertStyle.convert_heading}>{this.state.quantityName} Conversion</Text>
                 <View style = {InputConvertStyle.unit_conversion_style}>
                     <View style = {InputConvertStyle.unit_input_block}>
-                        <Text>FROM</Text>
+                        <Text style = {InputConvertStyle.from_to_text}>FROM</Text>
                         <View style = {InputConvertStyle.unit_userinput_block}>
                             <TextInput style = {InputConvertStyle.unit_user_input_textinput}
                                 onChangeText = {this.convertFromUnit}
@@ -107,16 +105,18 @@ export default class InputConvert extends Component {
                         </View>
                     </View>
                     <View style = {InputConvertStyle.unit_input_block}>
-                        <Text>TO</Text>
+                        <Text style = {InputConvertStyle.from_to_text}>TO</Text>
                         <View style = {InputConvertStyle.unit_userinput_block}>
                             <TextInput style = {InputConvertStyle.unit_user_input_textinput}
                                 value = {this.state.toValue.toString()}
                                 editable = {false}/>
-                            <Picker style = {InputConvertStyle.unit_user_input_picker}
-                                    selectedValue = {this.state.toUnitIndex}
-                                    onValueChange = {this.updateToUnit}
-                                    mode = "dropdown"> 
-                                { (this.state.quantityName == 'Length') ? 
+
+                            <Picker 
+                                style = {InputConvertStyle.unit_user_input_picker}
+                                selectedValue = {this.state.toUnitIndex}
+                                onValueChange = { this.updateToUnit }
+                                mode = "dropdown"> 
+                                    { (this.state.quantityName == 'Length') ? 
                                     this.state.lengthUnit.map( (unit, index) => {
                                             return (<Picker.Item label = {unit} value = {index} key = {unit}/>) 
                                         }) : 

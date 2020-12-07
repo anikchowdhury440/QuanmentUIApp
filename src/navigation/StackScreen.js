@@ -1,17 +1,19 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from '../components/HomeScreen';
-import ConvertScreen from '../components/ConvertScreen';
+import LengthScreen from '../components/LengthScreen';
+import TemperatureScreen from '../components/TemperatureScreen';
+import VolumeScreen from '../components/VolumeScreen';
 
 const Stack = createStackNavigator();
 
 const StackScreen = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName = "Home" screenOptions = {{headerShown : false}}>
-                <Stack.Screen name = "Home" component = {HomeScreen}/>
-                <Stack.Screen name = "Convert" component = {ConvertScreen}/>
+            <Stack.Navigator initialRouteName = "Length" screenOptions = {{headerShown : false}}>
+                <Stack.Screen name = "Length" component = {LengthScreen}/>
+                <Stack.Screen name = "Temperature" component = {TemperatureScreen}/>
+                <Stack.Screen name = "Volume" component = {VolumeScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
