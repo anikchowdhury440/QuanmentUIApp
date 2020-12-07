@@ -7,7 +7,7 @@ import VolumeScreen from '../components/VolumeScreen';
 
 const Stack = createStackNavigator();
 
-const StackScreen = () => {
+const ApplicationStack = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName = "Length" screenOptions = {{headerShown : false}}>
@@ -19,4 +19,4 @@ const StackScreen = () => {
     )
 }
 
-export default StackScreen;
+export default ApplicationStack;

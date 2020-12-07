@@ -4,12 +4,12 @@ import {
   StyleSheet
 } from 'react-native';
 
-import StackScreen from './src/navigation/StackScreen';
+import ApplicationStack from './src/navigation/ApplicationStack';
 
 class App extends Component {
   render() {
     return (
-      <StackScreen/>
+      <ApplicationStack/>
     );
   };
 };

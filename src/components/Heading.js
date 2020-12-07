@@ -6,7 +6,7 @@ const Heading = () => {
     return (
         <View>
             <Text style = {HeadingStyles.container}>
-                Welcome To Quantity Measurement
+                    Welcome To Quantity Measurement
             </Text>
         </View>
     )
