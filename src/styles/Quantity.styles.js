@@ -44,6 +44,11 @@ const QuantityStyles = StyleSheet.create({
         backgroundColor: '#E8DDFF',
     },
 
+    button_style_default : {
+        backgroundColor : 'white',
+        borderColor : '#00000029'
+    },
+
     image_style : {
         height : 50,
         marginBottom : 10,

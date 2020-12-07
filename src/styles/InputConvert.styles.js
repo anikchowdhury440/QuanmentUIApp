@@ -5,6 +5,7 @@ const InputConvertStyle = StyleSheet.create({
     container : {
         paddingTop : 20,
         width : '100%',
+        paddingBottom : 20
     },
 
     unit_conversion_style : {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import Heading from './Heading';
 import InputConvert from './InputConvert';
 import Quantity from './Quantity';
@@ -7,12 +7,12 @@ import TopHeader from './TopHeader';
 
 const TemperatureScreen = ({ navigation }) => {
     return (
-        <View>
+        <ScrollView>
             <TopHeader/>
             <Heading/>
-            <Quantity navigation = {navigation}/>
+            <Quantity navigation = {navigation} quantity = {'Temperature'}/>
             <InputConvert quantity = {'Temperature'}/>
-        </View>
+        </ScrollView>
     )
 }
 
