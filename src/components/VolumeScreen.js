@@ -8,15 +8,15 @@ import TopHeader from './TopHeader';
 const VolumeScreen = ({ navigation }) => {
     return (
         <>
-        <View>
-            <TopHeader/>
-            <Heading/>
-        </View>
+            <View>
+                <TopHeader/>
+                <Heading/>
+            </View>
 
-        <ScrollView>
-            <Quantity navigation = {navigation} quantity = {'Volume'}/>
-            <InputConvert quantity = {'Volume'}/>
-        </ScrollView>
+            <ScrollView>
+                <Quantity navigation = {navigation} quantity = {'Volume'}/>
+                <InputConvert quantity = {'Volume'}/>
+            </ScrollView>
         </>
     )
 }

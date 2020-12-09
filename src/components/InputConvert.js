@@ -2,18 +2,13 @@ import React, { Component} from 'react';
 import { Text, TextInput, View } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import InputConvertStyle from '../styles/InputConvert.styles';
+import UnitDataController from '../../UnitDataController'
 
 export default class InputConvert extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            quantityName : this.props.quantity,
-            lengthUnit : ["Kilometre", "Meter", "Centimeter", "Milimetre", "Micrometre", "Mile", "Foot", "Inch", "Yard"],
-            temperatureUnit : ["Celcius", "FarenHeit", "Kelvin"],
-            volumeUnit : ["Litre", "Gallon", "Mililitre"],
-            lengthConstant : [1, 1000, 100000, 1000000, 1000000000, 0.6214, 3282, 39384, 1094],
-            volumeConstant : [1, 0.2642, 1000],
             fromUnitIndex : 0,
             toUnitIndex : 0,
             fromValue : 0,
@@ -40,9 +35,9 @@ export default class InputConvert extends Component {
             fromValue : value
         })
 
-        if(this.state.quantityName == 'Length') {
-            var toUnitConstant = this.state.lengthConstant[this.state.toUnitIndex];
-            var fromUnitConstant = this.state.lengthConstant[this.state.fromUnitIndex];
+        if(this.props.quantity == 'Length') {
+            var toUnitConstant = UnitDataController.lengthConstant[this.state.toUnitIndex];
+            var fromUnitConstant = UnitDataController.lengthConstant[this.state.fromUnitIndex];
             var resultValue = (this.state.fromValue * toUnitConstant) / fromUnitConstant;
             if(this.state.fromUnitIndex != 3 && this.state.fromUnitIndex != 4) {
                 resultValue = Number(Math.round(resultValue+'e6')+'e-6')
@@ -52,9 +47,9 @@ export default class InputConvert extends Component {
             }
         }
 
-        else if (this.state.quantityName == 'Volume') {
-            var toUnitConstant = this.state.volumeConstant[this.state.toUnitIndex];
-            var fromUnitConstant = this.state.volumeConstant[this.state.fromUnitIndex];
+        else if (this.props.quantity == 'Volume') {
+            var toUnitConstant = UnitDataController.volumeConstant[this.state.toUnitIndex];
+            var fromUnitConstant = UnitDataController.volumeConstant[this.state.fromUnitIndex];
             var resultValue = (this.state.fromValue * toUnitConstant) / fromUnitConstant;
             resultValue = Number(Math.round(resultValue+'e4')+'e-4')
         }
@@ -92,7 +87,7 @@ export default class InputConvert extends Component {
             resultValue = Number(Math.round(resultValue+'e2')+'e-2');
         }
 
-        await this.setState({
+        this.setState({
             toValue : resultValue
         })
     }
@@ -118,15 +113,15 @@ export default class InputConvert extends Component {
                                 selectedValue = {this.state.fromUnitIndex}
                                 onValueChange = {this.updateFromUnit}
                                 mode = "dropdown"> 
-                                    { (this.state.quantityName == 'Length') ? 
-                                        this.state.lengthUnit.map( (unit, index) => { 
+                                    { (this.props.quantity == 'Length') ? 
+                                        UnitDataController.lengthUnit.map( (unit, index) => { 
                                             return (<Picker.Item label = {unit} value = {index} key = {unit}/>) 
                                         }) : 
-                                        (this.state.quantityName == 'Temperature') ? 
-                                            this.state.temperatureUnit.map( (unit, index) => { 
+                                        (this.props.quantity == 'Temperature') ? 
+                                            UnitDataController.temperatureUnit.map( (unit, index) => { 
                                                 return (<Picker.Item label = {unit} value = {index} key = {unit}/>)
                                             }) :
-                                            this.state.volumeUnit.map( (unit, index) => {
+                                            UnitDataController.volumeUnit.map( (unit, index) => {
                                                 return (<Picker.Item label = {unit} value = {index} key = {unit}/>)
                                             })
                                     }
@@ -151,15 +146,15 @@ export default class InputConvert extends Component {
                                 selectedValue = {this.state.toUnitIndex}
                                 onValueChange = { this.updateToUnit }
                                 mode = "dropdown"> 
-                                    { (this.state.quantityName == 'Length') ? 
-                                        this.state.lengthUnit.map( (unit, index) => {
+                                    { (this.props.quantity == 'Length') ? 
+                                        UnitDataController.lengthUnit.map( (unit, index) => {
                                             return (<Picker.Item label = {unit} value = {index} key = {unit}/>) 
                                         }) : 
-                                        (this.state.quantityName == 'Temperature') ? 
-                                            this.state.temperatureUnit.map( (unit, index) => { 
+                                        (this.props.quantity == 'Temperature') ? 
+                                            UnitDataController.temperatureUnit.map( (unit, index) => { 
                                                 return (<Picker.Item label = {unit} value = {index} key = {unit}/>)
                                             }) :
-                                            this.state.volumeUnit.map((unit, index) => {
+                                            UnitDataController.volumeUnit.map((unit, index) => {
                                                 return (<Picker.Item label = {unit} value = {index} key = {unit}/>)
                                             })
                                     }

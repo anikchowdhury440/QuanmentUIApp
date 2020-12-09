@@ -41,7 +41,7 @@ const InputConvertStyle = StyleSheet.create({
         borderColor : 'white',
         borderBottomColor : '#E7DCFE',
         borderWidth: 1,
-        fontSize : 20,
+        fontSize : 17,
         fontWeight : "bold",
         paddingLeft : 10
     },
