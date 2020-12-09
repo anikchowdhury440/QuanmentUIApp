@@ -15,7 +15,6 @@ const TemperatureScreen = ({ navigation }) => {
             
             <ScrollView>
                 <Quantity navigation = {navigation} quantity = {'Temperature'}/>
-                <InputConvert quantity = {'Temperature'}/>
             </ScrollView>
         </>
     )

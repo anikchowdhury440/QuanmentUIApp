@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View, TouchableOpacity, Image} from 'react-native';
 import QuantityStyles from '../styles/Quantity.styles';
+import InputConvert from './InputConvert';
 
 
 export default class Quantity extends Component {
@@ -38,6 +39,8 @@ export default class Quantity extends Component {
                     </TouchableOpacity>
                     
                 </View>
+
+                <InputConvert quantity = {this.props.quantity}/>
                 
             </View>
         )

@@ -15,7 +15,6 @@ const VolumeScreen = ({ navigation }) => {
 
             <ScrollView>
                 <Quantity navigation = {navigation} quantity = {'Volume'}/>
-                <InputConvert quantity = {'Volume'}/>
             </ScrollView>
         </>
     )

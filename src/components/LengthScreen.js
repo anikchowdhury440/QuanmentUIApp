@@ -15,7 +15,6 @@ const LengthScreen = ({navigation}) => {
             
             <ScrollView>
                 <Quantity navigation = {navigation} quantity = {'Length'}/>
-                <InputConvert quantity = {'Length'}/>
             </ScrollView>
         </>
     )

@@ -112,6 +112,7 @@ export default class InputConvert extends Component {
                                 style = {InputConvertStyle.unit_user_input_picker}
                                 selectedValue = {this.state.fromUnitIndex}
                                 onValueChange = {this.updateFromUnit}
+                                
                                 mode = "dropdown"> 
                                     { (this.props.quantity == 'Length') ? 
                                         UnitDataController.lengthUnit.map( (unit, index) => { 
