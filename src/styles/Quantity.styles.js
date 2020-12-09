@@ -21,8 +21,8 @@ const QuantityStyles = StyleSheet.create({
 
     button_style : {
         margin : 10,
-        width : 110,
-        height : 110,
+        width : '25%',
+        height : '85%',
         paddingTop : 15,
         paddingBottom : 15,
         borderRadius : 10,

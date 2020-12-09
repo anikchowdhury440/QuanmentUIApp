@@ -48,7 +48,7 @@ export default class InputConvert extends Component {
                 resultValue = Number(Math.round(resultValue+'e6')+'e-6')
             }
             else {
-                resultValue.toPrecision(8)
+                resultValue = resultValue.toExponential(7)
             }
         }
 
@@ -143,7 +143,7 @@ export default class InputConvert extends Component {
                         <View style = {InputConvertStyle.unit_userinput_block}>
 
                             <TextInput style = {InputConvertStyle.unit_user_input_textinput}
-                                value = {this.state.toValue.toString()}
+                                value = {isNaN(this.state.toValue) ? '' : this.state.toValue.toString()}
                                 editable = {false}/>
 
                             <Picker 

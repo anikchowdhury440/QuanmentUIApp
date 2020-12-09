@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import Heading from './Heading';
 import InputConvert from './InputConvert';
 import Quantity from './Quantity';
@@ -7,12 +7,17 @@ import TopHeader from './TopHeader';
 
 const VolumeScreen = ({ navigation }) => {
     return (
-        <ScrollView>
+        <>
+        <View>
             <TopHeader/>
             <Heading/>
+        </View>
+
+        <ScrollView>
             <Quantity navigation = {navigation} quantity = {'Volume'}/>
             <InputConvert quantity = {'Volume'}/>
         </ScrollView>
+        </>
     )
 }
 

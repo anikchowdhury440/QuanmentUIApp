@@ -16,7 +16,7 @@ const InputConvertStyle = StyleSheet.create({
 
     unit_input_block : {
         margin : 10,
-        width : '45%'
+        width : '40%'
     },
 
     from_to_text : {
